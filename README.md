@@ -36,6 +36,5 @@ A Java project that runs script files in other languages on the backend
 如果需要运行其他语言类型的脚本，主要更改`util`包下`FileUtil`工具类和`Service`下`ScriptAnalysisService`和其实现类
 
 如果需要可联系本人或者在本仓库提交`Issue`
-`mail to me`:
 - `Gmail`： [yuyangcoding@gmail.com](yuyangcoding@gmail.com)
 - `QQEmail`: [lxksy711@qq.com](lxksy711@qq.com)
