@@ -1,33 +1,39 @@
+# 运行端口
 server:
   port: 8333
 
+# 自定义banner，可以去https://patorjk.com/software/taag/ 生成
 spring:
   banner:
     charset: UTF-8
-    location: classpath:xdu-edu.txt
+    location: classpath:banner-example.txt
 
+# 数据库连接配置
   datasource:
-    username: root
-    password: zyy7112003.
-    url: jdbc:mysql:///xdu-edu
-
+    username: 
+    password: 
+    url: 
+# mybatis-plus配置
 mybatis-plus:
   global-config:
     db-config:
+    # 逻辑删除配置
       logic-delete-field: deleted
       logic-delete-value: 1
       logic-not-delete-value: 0
   configuration:
+  # 日志打印
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
+# knife4j在线文档配置
 knife4j:
   enable: true
   openapi:
-    title: xdu-edu
-    email: 22009200439@stu.xidian.edu.cn
+    title: title-example
+    email:	
     group:
       dev1:
-        group-name: 开发一阶
+        group-name: 例子
         api-rule: package
 
 

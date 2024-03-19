@@ -1,14 +1,14 @@
-package com.backstage.xduedu;
+package com.backstage.javarunscript;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.symmetric.SymmetricAlgorithm;
 import cn.hutool.crypto.symmetric.SymmetricCrypto;
-import com.backstage.xduedu.config.FileConfig;
-import com.backstage.xduedu.config.SecurityConfig;
-import com.backstage.xduedu.utils.FileUtil;
-import com.backstage.xduedu.utils.ScriptUtil;
-import com.backstage.xduedu.utils.SecurityUtil;
+import com.backstage.javarunscript.config.FileConfig;
+import com.backstage.javarunscript.config.SecurityConfig;
+import com.backstage.javarunscript.utils.FileUtil;
+import com.backstage.javarunscript.utils.ScriptUtil;
+import com.backstage.javarunscript.utils.SecurityUtil;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

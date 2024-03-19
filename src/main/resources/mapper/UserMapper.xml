@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.backstage.xduedu.mapper.UserMapper">
+<mapper namespace="com.backstage.javarunscript.mapper.UserMapper">
 
-    <resultMap id="BaseResultMap" type="com.backstage.xduedu.domain.entity.User">
+    <resultMap id="BaseResultMap" type="com.backstage.javarunscript.domain.entity.User">
             <id property="userId" column="user_id" jdbcType="BIGINT"/>
             <result property="userName" column="user_name" jdbcType="VARCHAR"/>
             <result property="salt" column="salt" jdbcType="VARCHAR"/>
