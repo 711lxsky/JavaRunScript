@@ -37,4 +37,4 @@ A Java project that runs script files in other languages on the backend
 
 如果需要可联系本人或者在本仓库提交`Issue`
 - `Gmail`： [yuyangcoding@gmail.com](yuyangcoding@gmail.com)
-- `QQEmail`: [lxksy711@qq.com](lxksy711@qq.com)
+- `QQEmail`: [lxksy711@qq.com](lxsky711@qq.com)
