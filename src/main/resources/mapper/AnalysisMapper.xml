@@ -7,9 +7,12 @@
     <resultMap id="BaseResultMap" type="com.backstage.javarunscript.domain.entity.Analysis">
             <id property="recordId" column="record_id" jdbcType="BIGINT"/>
             <result property="recordUserId" column="record_user_id" jdbcType="BIGINT"/>
+            <result property="uploadDate" column="upload_date" jdbcType="TIMESTAMP"/>
+            <result property="analysisStatus" column="analysis_status" jdbcType="INTEGER"/>
             <result property="recordDate" column="record_date" jdbcType="TIMESTAMP"/>
             <result property="uploadFileOssUrl" column="upload_file_oss_url" jdbcType="VARCHAR"/>
             <result property="analysisFileOssUrl" column="analysis_file_oss_url" jdbcType="VARCHAR"/>
+            <result property="analysisRemark" column="analysis_remark" jdbcType="LONGVARCHAR"/>
             <result property="deleted" column="deleted" jdbcType="INTEGER"/>
     </resultMap>
 

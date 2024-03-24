@@ -20,7 +20,7 @@ import java.util.Objects;
 import java.util.Random;
 
 
-@SpringBootTest(classes = XduEduApplication.class)
+@SpringBootTest(classes = JRSEduApplication.class)
 @Log4j2
 class XduEduApplicationTests {
 

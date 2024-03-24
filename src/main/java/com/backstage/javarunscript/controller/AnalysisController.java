@@ -45,6 +45,21 @@ public class AnalysisController {
         }
     }
 
+    @ApiOperation(value = "根据recordId获取分析记录")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "recordId", value = "分析记录id", required = true, dataType = "Long")
+    })
+    @GetMapping("/get-record-id")
+    public Result<?> getRecordByRecordId(@RequestParam(name = "recordId") Long recordId){
+        try {
+            return analysisService.getRecordByRecordId(recordId);
+        }
+        catch (HttpException e){
+            e.printStackTrace();
+            return Result.fail(e);
+        }
+    }
+
     @ApiOperation(value = "分页获取所有分析记录")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "pageNum", value = "页码", required = true, dataType = "Long"),

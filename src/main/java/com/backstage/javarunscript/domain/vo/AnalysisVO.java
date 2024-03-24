@@ -30,6 +30,18 @@ public class AnalysisVO implements Serializable {
     private Long recordId;
 
     /**
+     * 上传文件时间
+     */
+    @ApiModelProperty("上传文件时间")
+    private Date uploadDate;
+
+    /**
+     * 解析状态
+     */
+    @ApiModelProperty("解析状态, 1=成功， 0=失败， 2=解析中")
+    private Integer analysisStatus;
+
+    /**
      * 记录解析时间
      */
     @ApiModelProperty("记录解析时间")
@@ -46,6 +58,12 @@ public class AnalysisVO implements Serializable {
      */
     @ApiModelProperty("解析完成的文件转储OSS生成的url链接")
     private String analysisFileOssUrl;
+
+    /**
+     * 解析备注
+     */
+    @ApiModelProperty("解析备注")
+    private String analysisRemark;
 
     private static final long serialVersionUID = 1L;
 

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.2.0, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: xdu-edu
+-- Host: 127.0.0.1    Database: java_run_script
 -- ------------------------------------------------------
 -- Server version	8.2.0
 
@@ -25,14 +25,17 @@ DROP TABLE IF EXISTS `analysis`;
 CREATE TABLE `analysis` (
   `record_id` bigint NOT NULL AUTO_INCREMENT COMMENT '分析记录id',
   `record_user_id` bigint DEFAULT NULL COMMENT '解析记录的用户id',
+  `upload_date` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '文件上传时间',
+  `analysis_status` int DEFAULT '2' COMMENT '解析状态，1=成功， 0=失败， 2=执行中',
   `record_date` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '记录解析时间',
   `upload_file_oss_url` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '上传的文件转储在oss后生成的url链接',
   `analysis_file_oss_url` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '解析完成的文件转储OSS生成的url链接',
+  `analysis_remark` text COLLATE utf8mb4_unicode_ci COMMENT '解析备注',
   `deleted` int DEFAULT '0' COMMENT '逻辑删除标识',
   PRIMARY KEY (`record_id`),
   KEY `analysis_record_date_index` (`record_date`) COMMENT '由记录时间建立的索引',
   KEY `analysis_record_user_id_index` (`record_user_id`) COMMENT '由解析用户建立的索引'
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='分析记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='分析记录表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,4 +68,4 @@ CREATE TABLE `user` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-18 22:59:11
+-- Dump completed on 2024-03-24 14:32:04

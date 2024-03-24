@@ -3,6 +3,7 @@ package com.backstage.javarunscript.service;
 import com.backstage.javarunscript.domain.Result;
 import com.backstage.javarunscript.domain.entity.Analysis;
 import com.backstage.javarunscript.domain.vo.AnalysisVO;
+import com.backstage.javarunscript.domain.vo.UploadAnalysisVO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -14,9 +15,13 @@ public interface AnalysisService extends IService<Analysis> {
 
     boolean saveRecord(Analysis newRecord);
 
+    UploadAnalysisVO parseAnalysisToUploadAnalysisVO(Analysis analysis);
+
     AnalysisVO parseAnalysisToAnalysisVO(Analysis analysis);
 
     Result<?> getAnalysisRecordByUserId(Long userId);
 
     Result<?> getAllRecords(Long pageNum, Long pageSize);
+
+    Result<?> getRecordByRecordId(Long recordId);
 }

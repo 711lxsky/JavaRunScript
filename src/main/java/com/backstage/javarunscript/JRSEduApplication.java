@@ -6,10 +6,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 @SpringBootApplication
 @EnableSwagger2WebMvc
-public class XduEduApplication {
+public class JRSEduApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(XduEduApplication.class, args);
+        SpringApplication.run(JRSEduApplication.class, args);
     }
 
 }

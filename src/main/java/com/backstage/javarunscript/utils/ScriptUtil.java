@@ -1,7 +1,6 @@
 package com.backstage.javarunscript.utils;
 
 import com.backstage.javarunscript.Exception.HttpException;
-import com.backstage.javarunscript.config.FileConfig;
 import com.backstage.javarunscript.setting_enum.ExceptionConstant;
 import com.backstage.javarunscript.setting_enum.FileSetting;
 import lombok.extern.log4j.Log4j2;
@@ -28,10 +27,7 @@ public class ScriptUtil {
     @Resource
     private FileUtil fileUtil;
 
-    @Resource
-    private FileConfig fileConfig;
-
-    public void runPyScript() throws HttpException {
+    public String runPyScript() throws HttpException {
         Path scriptFullPath = Paths.get(fileUtil.getPyScriptFullPath());
         List<String> scriptCommand = new ArrayList<>();
         scriptCommand.add(FileSetting.PythonScriptCmd.getValue());
@@ -85,6 +81,7 @@ public class ScriptUtil {
                         ExceptionConstant.ScriptRunError.getMessage_EN() + errorInfo
                 );
             }
+            return errorInfo.toString();
         } catch (IOException | InterruptedException e) {
             throw new HttpException(e.getMessage());
         }

@@ -30,7 +30,7 @@ knife4j:
   enable: true
   openapi:
     title: title-example
-    email:	
+    email:
     group:
       dev1:
         group-name: 例子

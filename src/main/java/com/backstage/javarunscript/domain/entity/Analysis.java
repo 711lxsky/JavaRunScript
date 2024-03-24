@@ -28,6 +28,18 @@ public class Analysis implements Serializable {
     private Long recordUserId;
 
     /**
+     * 上传文件时间
+     */
+    @TableField(value = "upload_date")
+    private Date uploadDate;
+
+    /**
+     * 解析状态
+     */
+    @TableField(value = "analysis_status")
+    private Integer analysisStatus;
+
+    /**
      * 记录解析时间
      */
     @TableField(value = "record_date")
@@ -44,6 +56,12 @@ public class Analysis implements Serializable {
      */
     @TableField(value = "analysis_file_oss_url")
     private String analysisFileOssUrl;
+
+    /**
+     * 解析备注
+     */
+    @TableField(value = "analysis_remark")
+    private String analysisRemark;
 
     /**
      * 逻辑删除标识
