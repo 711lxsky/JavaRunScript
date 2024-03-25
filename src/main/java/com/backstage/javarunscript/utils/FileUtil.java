@@ -41,6 +41,12 @@ public class FileUtil {
         return this.getCurWordDir() + fileConfig.getWorkerFolder();
     }
 
+    public String getAnalysisResFileFullName(){
+        return this.getAnalysisDir()
+                + StringConstant.Separator.getValue()
+                + fileConfig.getScriptResFileName();
+    }
+
     public String getUnZipDirForRandomName(){
         return this.getCurWordDir()
                 + StringConstant.Separator.getValue()

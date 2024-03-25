@@ -57,24 +57,26 @@ public class AsyncAnalysisTaskServiceImpl implements AsyncAnalysisTaskService {
             // 压缩运行结果
             String zipFileDir = fileUtil.getUnZipDirForRandomName();
             fileUtil.zipFileForDir(fileUtil.getAnalysisDir(), zipFileDir);
-            // 删除解压文件夹和解压文件
-            fileUtil.deleteFile(uploadFile);
-            fileUtil.deleteDirectory(unZipDir);
             // 将运行结果作为.zip文件上传到OSS指定bucket目录下
             File analysisFile = fileUtil.createFileForZip(zipFileDir);
             String analysisFileUrl = aliyunOSSUtil.saveDateToAnalysisFile(analysisFile);
-            // 删除压缩文件
+            // 删除分析文件和压缩文件
+            fileUtil.deleteDirectory(fileUtil.getAnalysisResFileFullName());
             fileUtil.deleteFile(analysisFile);
             fileUtil.deleteDirectory(zipFileDir);
             record.setAnalysisFileOssUrl(analysisFileUrl);
             record.setAnalysisStatus(analysisConfig.getAnalysisSuccess());
         }
         catch (HttpException e){
+            record.setAnalysisRemark(e.getMessage());
             record.setAnalysisStatus(analysisConfig.getAnalysisFail());
             return CompletableFuture.completedFuture(ResultCodeAndMessage.AnalysisComplete.getDescription() + ResultCodeAndMessage.Fail.getDescription());
         }
         finally {
             analysisService.updateById(record);
+            // 删除解压文件夹和解压文件
+            fileUtil.deleteFile(uploadFile);
+            fileUtil.deleteDirectory(unZipDir);
         }
         return CompletableFuture.completedFuture(ResultCodeAndMessage.AnalysisComplete.getDescription() + ResultCodeAndMessage.SUCCESS.getDescription());
     }

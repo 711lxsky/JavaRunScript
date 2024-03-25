@@ -112,8 +112,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.backstage.javarunscript.XduEduApplication</mainClass>
-                    <skip>true</skip>
+                    <mainClass>com.backstage.javarunscript.JRSEduApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
