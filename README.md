@@ -34,7 +34,7 @@ A Java project that runs script files in other languages on the backend
 脚本文件应该放在`wordDir/`下的`scripts/`目录中
 
 ### 数据库导入
-在`resource`目录下有个`jrs.sql`脚本，可以一键运行脚本导入架构
+在`resource`目录下有个`jrs.sql`脚本，可以一键运行脚本导入表结构
 
 ## 功能自定义
 
